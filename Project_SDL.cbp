@@ -44,14 +44,15 @@
 			<Add directory="Tools/SDL/SDL_mixer-1.2.12/include" />
 			<Add directory="Tools/SDL/SDL_net-1.2.8/include" />
 			<Add directory="Tools/SDL/SDL_ttf-2.0.11/include" />
+			<Add directory="Tools/SDL/SDL-1.2.15/include/SDL" />
 			<Add directory="Tools/SDL/SDL-1.2.15/include" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDLmain -lSDL" />
-			<Add directory="Tools/SDL/SDL_image-1.2.12/lib" />
-			<Add directory="Tools/SDL/SDL_mixer-1.2.12/lib" />
-			<Add directory="Tools/SDL/SDL_net-1.2.8/lib" />
-			<Add directory="Tools/SDL/SDL_ttf-2.0.11/lib" />
+			<Add option="-lmingw32 -lSDLmain -lSDL -lSDL_image" />
+			<Add directory="Tools/SDL/SDL_image-1.2.12/lib/x86" />
+			<Add directory="Tools/SDL/SDL_mixer-1.2.12/lib/x86" />
+			<Add directory="Tools/SDL/SDL_net-1.2.8/lib/x86" />
+			<Add directory="Tools/SDL/SDL_ttf-2.0.11/lib/x86" />
 			<Add directory="Tools/SDL/SDL-1.2.15/lib" />
 		</Linker>
 		<Unit filename="Src/main.cpp" />
