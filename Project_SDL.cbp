@@ -13,12 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="Tools/SDL/SDL-1.2.15/include" />
 				</Compiler>
-				<Linker>
-					<Add option="-lmingw32 -lSDLmain -lSDL" />
-					<Add directory="Tools/SDL/SDL-1.2.15/lib" />
-				</Linker>
 				<ExtraCommands>
 					<Add after='cmd /c copy &quot;$(PROJECT_DIR)Tools\SDL\SDL-1.2.15\bin\SDL.dll&quot; &quot;$(PROJECT_DIR)$(TARGET_OUTPUT_DIR)&quot;' />
 					<Mode after="always" />
@@ -31,12 +26,9 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="Tools/SDL/SDL-1.2.15/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="-lmingw32 -lSDLmain -lSDL" />
-					<Add directory="Tools/SDL/SDL-1.2.15/lib" />
 				</Linker>
 				<ExtraCommands>
 					<Add after='cmd /c copy &quot;$(PROJECT_DIR)Tools\SDL\SDL-1.2.15\bin\SDL.dll&quot; &quot;$(PROJECT_DIR)$(TARGET_OUTPUT_DIR)&quot;' />
@@ -44,8 +36,24 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Weffc++" />
+			<Add option="-std=c++11" />
+			<Add option="-Wextra" />
 			<Add option="-Wall" />
+			<Add directory="Tools/SDL/SDL_image-1.2.12/include" />
+			<Add directory="Tools/SDL/SDL_mixer-1.2.12/include" />
+			<Add directory="Tools/SDL/SDL_net-1.2.8/include" />
+			<Add directory="Tools/SDL/SDL_ttf-2.0.11/include" />
+			<Add directory="Tools/SDL/SDL-1.2.15/include" />
 		</Compiler>
+		<Linker>
+			<Add option="-lmingw32 -lSDLmain -lSDL" />
+			<Add directory="Tools/SDL/SDL_image-1.2.12/lib" />
+			<Add directory="Tools/SDL/SDL_mixer-1.2.12/lib" />
+			<Add directory="Tools/SDL/SDL_net-1.2.8/lib" />
+			<Add directory="Tools/SDL/SDL_ttf-2.0.11/lib" />
+			<Add directory="Tools/SDL/SDL-1.2.15/lib" />
+		</Linker>
 		<Unit filename="Src/main.cpp" />
 		<Extensions>
 			<code_completion />
