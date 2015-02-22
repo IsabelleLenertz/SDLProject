@@ -14,10 +14,6 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
-				<ExtraCommands>
-					<Add after='cmd /c copy &quot;$(PROJECT_DIR)Tools\SDL\SDL-1.2.15\bin\SDL.dll&quot; &quot;$(PROJECT_DIR)$(TARGET_OUTPUT_DIR)&quot;' />
-					<Mode after="always" />
-				</ExtraCommands>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Project SDL" prefix_auto="1" extension_auto="1" />
@@ -30,9 +26,6 @@
 				<Linker>
 					<Add option="-s" />
 				</Linker>
-				<ExtraCommands>
-					<Add after='cmd /c copy &quot;$(PROJECT_DIR)Tools\SDL\SDL-1.2.15\bin\SDL.dll&quot; &quot;$(PROJECT_DIR)$(TARGET_OUTPUT_DIR)&quot;' />
-				</ExtraCommands>
 			</Target>
 		</Build>
 		<Compiler>
@@ -55,6 +48,10 @@
 			<Add directory="Tools/SDL/SDL_ttf-2.0.11/lib/x86" />
 			<Add directory="Tools/SDL/SDL-1.2.15/lib" />
 		</Linker>
+		<ExtraCommands>
+			<Add after='cmd /c copy &quot;$(PROJECT_DIR)Tools\SDL\SDL-1.2.15\bin\*.dll&quot; &quot;$(PROJECT_DIR)$(TARGET_OUTPUT_DIR)&quot;' />
+			<Add after='cmd /c copy &quot;$(PROJECT_DIR)Tools\SDL\SDL_image-1.2.12\lib\x86\*.dll&quot; &quot;$(PROJECT_DIR)$(TARGET_OUTPUT_DIR)&quot;' />
+		</ExtraCommands>
 		<Unit filename="Src/main.cpp" />
 		<Extensions>
 			<code_completion />
